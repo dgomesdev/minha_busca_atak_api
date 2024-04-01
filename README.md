@@ -1,4 +1,4 @@
-## Documentação da API Minha Busca Atak
+# Documentação da API Minha Busca Atak
 
 ### Introdução
 
@@ -54,4 +54,25 @@ GET /search/maringa
         "link": "https://us.trip.com/travel-guide/destination/maringa-14027/"
     }
 ]
+```
+
+### Stacks utilizadas
+
+* [Kotlin](https://kotlinlang.org/)
+* [Spring boot](https://spring.io/projects/spring-boot)
+* [Intellij IDEA](https://www.jetbrains.com/idea/)
+
+## Observação
+
+A API que está hospedada em uma instãncia EC2 da AWS, portanto não é necessário baixar ou instalar nada para poder consumi-lá direto do aplicativo Flutter. Mas, caso necessário, o código pode ser executado localmente.
+
+### Requisitos técnicos
+
+* Java 17
+
+### Como executar o aplicativo
+
+Clonar o repositório/baixar e descompactar o zip com o códdigo fonte e executar usando uma IDE como o Intellij ou VS Code ou executar o seguinte comando no terminal, estando na pasta raiz do projeto:
+```
+java -jar target/my_google_search-0.0.1-SNAPSHOT.jar
 ```
