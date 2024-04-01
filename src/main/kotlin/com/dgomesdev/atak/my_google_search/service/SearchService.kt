@@ -11,7 +11,6 @@ class SearchService {
         val url = "https://www.google.com/search?q=${queryText.replace(" ", "+")}"
         val doc = Jsoup.connect(url).get()
         val searchResults = doc.select("div.yuRUbf")
-
         val resultList = mutableListOf<SearchResult>()
 
         for (result in searchResults) {
