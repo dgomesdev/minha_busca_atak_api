@@ -1,12 +1,12 @@
-# Documentação da API Minha Busca Atak
+## My Google search Search API Documentation
 
-### Introdução
+### Introduction
 
-A API Minha Busca Atak permite aos usuários recuperar resultados de pesquisa do Google com base em um texto de consulta. Ela fornece uma interface simples para acessar os resultados de pesquisa em um formato JSON estruturado.
+The Search API allows users to retrieve search results from Google based on a query text. It provides a simple interface to access search results in a structured JSON format.
 
-### URL Base
+### Base URL
 
-A URL base para a API é:
+The base URL for the API is:
 
 ```
 http://ec2-3-88-165-28.compute-1.amazonaws.com:8080
@@ -14,32 +14,32 @@ http://ec2-3-88-165-28.compute-1.amazonaws.com:8080
 
 ### Endpoint
 
-#### Endpoint de Busca
+#### Search Endpoint
 
 - **URL**: `/search/{queryText}`
-- **Método**: GET
-- **Descrição**: Recupera resultados de pesquisa do Google com base no texto de consulta fornecido.
-- **Parâmetros da Requisição**:
-    - `queryText` (string): O texto a ser usado como consulta de pesquisa.
-- **Resposta**:
-    - **Códigos de Status**:
-        - `200 OK`: Resultados de pesquisa recuperados com sucesso.
-        - `400 Bad Request`: Ocorreu um erro ao processar a solicitação.
-    - **Corpo**: Lista de resultados de pesquisa no formato JSON. Cada resultado de pesquisa contém um título e um link.
-        - `title` (string): Título do resultado de pesquisa.
-        - `link` (string): Link para o resultado de pesquisa.
+- **Method**: GET
+- **Description**: Retrieves search results from Google based on the provided query text.
+- **Request Parameters**:
+  - `queryText` (string): The text to be used as the search query.
+- **Response**:
+  - **Status Codes**:
+    - `200 OK`: Successfully retrieved search results.
+    - `400 Bad Request`: Error occurred while processing the request.
+  - **Body**: List of search results in JSON format. Each search result contains a title and a link.
+    - `title` (string): Title of the search result.
+    - `link` (string): Link to the search result.
 
-### Exemplo
+### Example
 
-#### Requisição
+#### Request
 
 ```
 GET /search/maringa
 ```
 
-#### Resposta
+#### Response
 
-```
+```json
 [
     {
         "title": "Maringá",
@@ -52,27 +52,19 @@ GET /search/maringa
     {
         "title": "Maringa 2024 Top Things to Do - Maringa Travel Guides",
         "link": "https://us.trip.com/travel-guide/destination/maringa-14027/"
-    }
+    },
+    ...
 ]
 ```
 
-### Stacks utilizadas
+### Error Handling
 
-* [Kotlin](https://kotlinlang.org/)
-* [Spring boot](https://spring.io/projects/spring-boot)
-* [Intellij IDEA](https://www.jetbrains.com/idea/)
+If an error occurs while processing the request, the API will return an appropriate HTTP status code along with an error message in the response body.
 
-## Observação
+### Rate Limiting
 
-A API que está hospedada em uma instãncia EC2 da AWS, portanto não é necessário baixar ou instalar nada para poder consumi-lá direto do aplicativo Flutter. Mas, caso necessário, o código pode ser executado localmente.
+Currently, there are no rate limits imposed on the API. However, abuse of the API may result in rate limiting or suspension of access.
 
-### Requisitos técnicos
+### Contact
 
-* Java 17
-
-### Como executar o aplicativo
-
-Clonar o repositório/baixar e descompactar o zip com o códdigo fonte e executar usando uma IDE como o Intellij ou VS Code ou executar o seguinte comando no terminal, estando na pasta raiz do projeto:
-```
-java -jar target/my_google_search-0.0.1-SNAPSHOT.jar
-```
+For any inquiries or issues related to the API, please contact the API maintainer at [maintainer@example.com](mailto:maintainer@example.com).
