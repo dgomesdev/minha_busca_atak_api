@@ -60,11 +60,3 @@ GET /search/maringa
 ### Error Handling
 
 If an error occurs while processing the request, the API will return an appropriate HTTP status code along with an error message in the response body.
-
-### Rate Limiting
-
-Currently, there are no rate limits imposed on the API. However, abuse of the API may result in rate limiting or suspension of access.
-
-### Contact
-
-For any inquiries or issues related to the API, please contact the API maintainer at [maintainer@example.com](mailto:maintainer@example.com).
